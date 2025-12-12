@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teachers' Day Message Card</title>
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+    body {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Georgia', serif;
+    }
+
+    html {
+      height: 100%;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    .card-container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+    }
+
+    .card {
+      position: relative;
+      width: 100%;
+      max-width: 600px;
+      padding: 60px 50px;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .decorative-corner {
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      opacity: 0.15;
+    }
+
+    .corner-top-left {
+      top: -20px;
+      left: -20px;
+    }
+
+    .corner-bottom-right {
+      bottom: -20px;
+      right: -20px;
+      transform: rotate(180deg);
+    }
+
+    .icon-container {
+      margin-bottom: 30px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .book-icon {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto;
+    }
+
+    .greeting {
+      font-size: 42px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    .teacher-name {
+      font-size: 32px;
+      font-weight: 600;
+      margin-bottom: 30px;
+      font-style: italic;
+    }
+
+    .message {
+      font-size: 20px;
+      line-height: 1.6;
+      margin-bottom: 40px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .closing-section {
+      margin-top: 40px;
+      padding-top: 30px;
+      border-top: 2px solid;
+    }
+
+    .closing {
+      font-size: 18px;
+      margin-bottom: 10px;
+      font-style: italic;
+    }
+
+    .student-name {
+      font-size: 22px;
+      font-weight: 600;
+    }
+
+    .sparkles {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+    }
+
+    .sparkle {
+      position: absolute;
+      font-size: 24px;
+      animation: sparkle 2s ease-in-out infinite;
+      opacity: 0;
+    }
+
+    @keyframes sparkle {
+      0%, 100% {
+        opacity: 0;
+        transform: scale(0.5);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .sparkle:nth-child(1) { top: 15%; left: 10%; animation-delay: 0s; }
+    .sparkle:nth-child(2) { top: 25%; right: 15%; animation-delay: 0.5s; }
+    .sparkle:nth-child(3) { bottom: 20%; left: 15%; animation-delay: 1s; }
+    .sparkle:nth-child(4) { bottom: 30%; right: 10%; animation-delay: 1.5s; }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+ </head>
+ <body>
+  <div class="card-container">
+   <div class="card" id="card">
+    <svg class="decorative-corner corner-top-left" viewbox="0 0 100 100"><path d="M0,0 Q50,0 50,50 Q0,50 0,100 Z" fill="currentColor" />
+    </svg>
+    <svg class="decorative-corner corner-bottom-right" viewbox="0 0 100 100"><path d="M0,0 Q50,0 50,50 Q0,50 0,100 Z" fill="currentColor" />
+    </svg>
+    <div class="sparkles">
+     <div class="sparkle">
+      ✨
+     </div>
+     <div class="sparkle">
+      ⭐
+     </div>
+     <div class="sparkle">
+      ✨
+     </div>
+     <div class="sparkle">
+      ⭐
+     </div>
+    </div>
+    <div class="icon-container">
+     <svg class="book-icon" viewbox="0 0 100 100" fill="none"><path d="M20 15 L20 85 L50 75 L80 85 L80 15 L50 25 Z" stroke="currentColor" stroke-width="3" fill="currentColor" opacity="0.2" /> <path d="M50 25 L50 75" stroke="currentColor" stroke-width="2" /> <path d="M30 35 L45 35" stroke="currentColor" stroke-width="2" stroke-linecap="round" /> <path d="M30 45 L45 45" stroke="currentColor" stroke-width="2" stroke-linecap="round" /> <path d="M30 55 L45 55" stroke="currentColor" stroke-width="2" stroke-linecap="round" /> <circle cx="65" cy="40" r="8" fill="currentColor" opacity="0.3" /> <path d="M65 35 L65 45 M60 40 L70 40" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+     </svg>
+    </div>
+    <h1 class="greeting" id="greeting">Happy Teachers' Day!</h1>
+    <h2 class="teacher-name" id="teacherName">Dear Ms. Johnson</h2>
+    <p class="message" id="message">Thank you for inspiring us every day with your wisdom, patience, and dedication. You make learning a joy and help us believe in ourselves.</p>
+    <div class="closing-section" id="closingSection">
+     <p class="closing" id="closing">With gratitude and appreciation,</p>
+     <p class="student-name" id="studentName">Your Student</p>
+    </div>
+   </div>
+  </div>
+  <script>
+    const defaultConfig = {
+      background_color: "#2D1B69",
+      card_surface_color: "#FFFFFF",
+      accent_color: "#8E44AD",
+      text_color: "#4A148C",
+      border_color: "#9C27B0",
+      font_family: "Georgia",
+      font_size: 16,
+      main_greeting: "Happy Teachers' Day!",
+      teacher_name: "Randy Bello",
+      personal_message: "Hi sir kalmahan mo lang sana ang activity na ina hatag mo sa mga floppy birds love love lng po 😊",
+      closing_text: "With gratitude and appreciation,",
+      student_name: "Lenzy joy Lubedeses"
+    };
+
+    let config = { ...defaultConfig };
+
+    async function onConfigChange(newConfig) {
+      config = newConfig;
+      
+      const baseSize = config.font_size || defaultConfig.font_size;
+      const customFont = config.font_family || defaultConfig.font_family;
+      const baseFontStack = 'Georgia, serif';
+      const fontFamily = `${customFont}, ${baseFontStack}`;
+
+      document.body.style.backgroundColor = config.background_color || defaultConfig.background_color;
+      document.body.style.fontFamily = fontFamily;
+
+      const card = document.getElementById('card');
+      card.style.backgroundColor = config.card_surface_color || defaultConfig.card_surface_color;
+      card.style.color = config.text_color || defaultConfig.text_color;
+
+      const corners = document.querySelectorAll('.decorative-corner');
+      corners.forEach(corner => {
+        corner.style.color = config.accent_color || defaultConfig.accent_color;
+      });
+
+      const bookIcon = document.querySelector('.book-icon');
+      bookIcon.style.color = config.accent_color || defaultConfig.accent_color;
+
+      const greeting = document.getElementById('greeting');
+      greeting.textContent = config.main_greeting || defaultConfig.main_greeting;
+      greeting.style.color = config.accent_color || defaultConfig.accent_color;
+      greeting.style.fontSize = `${baseSize * 2.625}px`;
+      greeting.style.fontFamily = fontFamily;
+
+      const teacherName = document.getElementById('teacherName');
+      teacherName.textContent = config.teacher_name || defaultConfig.teacher_name;
+      teacherName.style.color = config.text_color || defaultConfig.text_color;
+      teacherName.style.fontSize = `${baseSize * 2}px`;
+      teacherName.style.fontFamily = fontFamily;
+
+      const message = document.getElementById('message');
+      message.textContent = config.personal_message || defaultConfig.personal_message;
+      message.style.color = config.text_color || defaultConfig.text_color;
+      message.style.fontSize = `${baseSize * 1.25}px`;
+      message.style.fontFamily = fontFamily;
+
+      const closingSection = document.getElementById('closingSection');
+      closingSection.style.borderTopColor = config.border_color || defaultConfig.border_color;
+
+      const closing = document.getElementById('closing');
+      closing.textContent = config.closing_text || defaultConfig.closing_text;
+      closing.style.color = config.text_color || defaultConfig.text_color;
+      closing.style.fontSize = `${baseSize * 1.125}px`;
+      closing.style.fontFamily = fontFamily;
+
+      const studentName = document.getElementById('studentName');
+      studentName.textContent = config.student_name || defaultConfig.student_name;
+      studentName.style.color = config.accent_color || defaultConfig.accent_color;
+      studentName.style.fontSize = `${baseSize * 1.375}px`;
+      studentName.style.fontFamily = fontFamily;
+    }
+
+    function mapToCapabilities(config) {
+      return {
+        recolorables: [
+          {
+            get: () => config.background_color || defaultConfig.background_color,
+            set: (value) => {
+              config.background_color = value;
+              if (window.elementSdk) {
+                window.elementSdk.setConfig({ background_color: value });
+              }
+            }
+          },
+          {
+            get: () => config.card_surface_color || defaultConfig.card_surface_color,
+            set: (value) => {
+              config.card_surface_color = value;
+              if (window.elementSdk) {
+                window.elementSdk.setConfig({ card_surface_color: value });
+              }
+            }
+          },
+          {
+            get: () => config.accent_color || defaultConfig.accent_color,
+            set: (value) => {
+              config.accent_color = value;
+              if (window.elementSdk) {
+                window.elementSdk.setConfig({ accent_color: value });
+              }
+            }
+          },
+          {
+            get: () => config.text_color || defaultConfig.text_color,
+            set: (value) => {
+              config.text_color = value;
+              if (window.elementSdk) {
+                window.elementSdk.setConfig({ text_color: value });
+              }
+            }
+          },
+          {
+            get: () => config.border_color || defaultConfig.border_color,
+            set: (value) => {
+              config.border_color = value;
+              if (window.elementSdk) {
+                window.elementSdk.setConfig({ border_color: value });
+              }
+            }
+          }
+        ],
+        borderables: [],
+        fontEditable: {
+          get: () => config.font_family || defaultConfig.font_family,
+          set: (value) => {
+            config.font_family = value;
+            if (window.elementSdk) {
+              window.elementSdk.setConfig({ font_family: value });
+            }
+          }
+        },
+        fontSizeable: {
+          get: () => config.font_size || defaultConfig.font_size,
+          set: (value) => {
+            config.font_size = value;
+            if (window.elementSdk) {
+              window.elementSdk.setConfig({ font_size: value });
+            }
+          }
+        }
+      };
+    }
+
+    function mapToEditPanelValues(config) {
+      return new Map([
+        ["main_greeting", config.main_greeting || defaultConfig.main_greeting],
+        ["teacher_name", config.teacher_name || defaultConfig.teacher_name],
+        ["personal_message", config.personal_message || defaultConfig.personal_message],
+        ["closing_text", config.closing_text || defaultConfig.closing_text],
+        ["student_name", config.student_name || defaultConfig.student_name]
+      ]);
+    }
+
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities,
+        mapToEditPanelValues
+      });
+    }
+
+    onConfigChange(defaultConfig);
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99a4fb97d317b9ef',t:'MTc2MjQzNjIxOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

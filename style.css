@@ -1,0 +1,85 @@
+<style>
+    body {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Georgia', serif;
+    }
+
+    html {
+      height: 100%;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    .card-container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+    }
+
+    .card {
+      position: relative;
+      width: 100%;
+      max-width: 600px;
+      padding: 60px 50px;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .decorative-corner {
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      opacity: 0.15;
+    }
+
+    .corner-top-left { top: -20px; left: -20px; }
+    .corner-bottom-right { bottom: -20px; right: -20px; transform: rotate(180deg); }
+
+    .icon-container { margin-bottom: 30px; animation: float 3s ease-in-out infinite; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .book-icon { width: 80px; height: 80px; margin: 0 auto; }
+
+    .greeting { font-size: 42px; font-weight: bold; margin-bottom: 20px; }
+
+    .teacher-name { font-size: 32px; font-weight: 600; margin-bottom: 30px; font-style: italic; }
+
+    .message { font-size: 20px; line-height: 1.6; max-width: 500px; margin: 0 auto 40px; }
+
+    .closing-section { margin-top: 40px; padding-top: 30px; border-top: 2px solid; }
+
+    .closing { font-size: 18px; margin-bottom: 10px; font-style: italic; }
+
+    .student-name { font-size: 22px; font-weight: 600; }
+
+    .sparkles { position: absolute; width: 100%; height: 100%; top: 0; left: 0; pointer-events: none; }
+
+    .sparkle { position: absolute; font-size: 24px; animation: sparkle 2s ease-in-out infinite; opacity: 0; }
+
+    @keyframes sparkle {
+      0%, 100% { opacity: 0; transform: scale(0.5); }
+      50% { opacity: 1; transform: scale(1); }
+    }
+
+    .sparkle:nth-child(1) { top: 15%; left: 10%; animation-delay: 0s; }
+    .sparkle:nth-child(2) { top: 25%; right: 15%; animation-delay: 0.5s; }
+    .sparkle:nth-child(3) { bottom: 20%; left: 15%; animation-delay: 1s; }
+    .sparkle:nth-child(4) { bottom: 30%; right: 10%; animation-delay: 1.5s; }
+</style>
